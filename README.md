@@ -132,7 +132,14 @@ Usage: java -jar ysoserial-[version]-all.jar [payload] '[command]'
 ## 回显
 - CC链的回显修改createTemplatesImplEcho方法
 - CB链的回显在ysoserial包下新增一个ClassLoader，在其static代码块中修改即可
+- Resin的回显，也是要用自定义的ClassLoader，具体代码CommonsBeanutils1_Cl4.java中可以看到 
 
+```
+ final Object templates = Gadgets.createTemplatesImpl(ysoserial.MyClassLoader4.class);
+```
+所以具体使用方法是java -jar xx.jar CommonsBeanutils1_Cl4 command
+
+某个OA是用Resin的，可以用这个回显
 
 ## 生成hex字符串方法
 ```py
