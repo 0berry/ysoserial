@@ -137,7 +137,7 @@ Usage: java -jar ysoserial-[version]-all.jar [payload] '[command]'
 ```
  final Object templates = Gadgets.createTemplatesImpl(ysoserial.MyClassLoader4.class);
 ```
-所以具体使用方法是java -jar xx.jar CommonsBeanutils1_Cl4 command
+所以具体使用方法是java -jar xx.jar CommonsBeanutils1_Cl4 command ，command可以乱写xxx,实际传入的是header自定义头的cmd，具体需要修改可以改MyClassLoader4
 
 某个OA是用Resin的，可以用这个回显
 
