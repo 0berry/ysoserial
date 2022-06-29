@@ -9,6 +9,13 @@ AspectJWeaver:
 - https://medium.com/nightst0rm/t%C3%B4i-%C4%91%C3%A3-chi%E1%BA%BFm-quy%E1%BB%81n-%C4%91i%E1%BB%81u-khi%E1%BB%83n-c%E1%BB%A7a-r%E1%BA%A5t-nhi%E1%BB%81u-trang-web-nh%C6%B0-th%E1%BA%BF-n%C3%A0o-61efdf4a03f5
 - [[AntCTFxD^3CTF non-RCE题解]Servlet时间竞争以及AsjpectJWeaver反序列化Gadget构造](https://mp.weixin.qq.com/s/GxFFBekqSl5BOnzAKFGBDQ)
 - [ysoserial AspectJWeaver file write gadget](https://xz.aliyun.com/t/9168)
+- [关于FileUpload1](https://blog.spoock.com/2018/10/15/cve-2016-1000031/)
+
+```
+- FileUpload的1.3.1之前的版本配合JDK1.7之前的版本，能够达到写入任意文件的漏洞;
+- FileUpload的1.3.1之前的版本配合JDK1.7及其之后的版本，能够向任意目录写入文件;
+- FileUpload的1.3.1以及之后的版本只能向特定目录写入文件，此目录也必须存在。(文件的的命名也无法控制);
+```
 
 ## Usage
 
@@ -180,7 +187,14 @@ __bb_C3P0 = b'\xac\xed\x00\x05sr\x00(com.mchange.v2.c3p0.PoolBackedDataSource\xd
 
 ```
 
+C3P0不出网利用：
+> 市面上存在两个C3P0，com.mchange:c3p0、c3p0:c3p0。比较常见的是第一个，两个C3P0都能够利用但是因为SUID的原因需要稍微变化一下，黑盒反序列打第一个没反应时可以尝试下第二个，可能有惊喜~
 
+参考：
+- http://redteam.today/2020/04/18/c3p0%E7%9A%84%E4%B8%89%E4%B8%AAgadget/
+- https://mp.weixin.qq.com/s/KBog9XXz7Of93hAiV8Y7fQ
+- https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=818885112215152&inviter_id=28512258815451&share_from=ShareToWechat&keyword=yRB6EQj
+- [cc常见的链关系图](https://wx.zsxq.com/mweb/views/topicdetail/topicdetail.html?topic_id=218851818848141&inviter_id=28512258815451&share_from=ShareToWechat&keyword=UZ7mUj6)
 
 ## Ref
 - [Real Wolrd CTF 3rd Writeup | Old System](https://mp.weixin.qq.com/s/ClASwg6SH0uij_-IX-GahQ)
