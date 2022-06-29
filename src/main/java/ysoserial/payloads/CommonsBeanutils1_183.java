@@ -2,6 +2,7 @@ import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtField;
 import org.apache.commons.beanutils.BeanComparator;
+import ysoserial.payloads.ObjectPayload;
 import ysoserial.payloads.annotation.Authors;
 import ysoserial.payloads.annotation.Dependencies;
 import ysoserial.payloads.util.Gadgets;

